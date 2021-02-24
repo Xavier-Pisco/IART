@@ -6,6 +6,24 @@ class Bucket:
 	max: int
 	val: int
 
+class Node:
+	def __init__(self, bucket1, bucket2, parent):
+		self.b1 = bucket1
+		self.b2 = bucket2
+		self.parent = parent
+		self.children = []
+
+	def addChild(self, bucket1, bucket2):
+		self.children.append(Node(bucket1, bucket2))
+
+	def addChild(self, node):
+		self.children.append(node)
+
+	def print(self):
+		if (self.parent != None):
+			self.parent.print()
+			print(self.b1, self.b2)
+
 
 size1 = input("First container size: ")
 size2 = input("Second container size: ")
@@ -13,8 +31,7 @@ size2 = input("Second container size: ")
 b1 = Bucket(int(size1), 0)
 b2 = Bucket(int(size2), 0)
 
-b1.val = 0
-b2.val = 0
+initial = Node(b1, b2, None)
 
 def fill(bucket):
 	if (bucket.val < bucket.max):
@@ -49,11 +66,11 @@ queue = []
 value = 2
 
 def breathFirstSearch():
-	(b1, b2) = queue.pop(0)
+	initial = queue.pop(0)
 	i = 0
 	while(i < 6):
-		bucket1 = deepcopy(b1)
-		bucket2 = deepcopy(b2)
+		bucket1 = deepcopy(initial.b1)
+		bucket2 = deepcopy(initial.b2)
 		executed = True
 		if (i == 0):
 			executed = fill(bucket1)
@@ -67,29 +84,28 @@ def breathFirstSearch():
 			executed = pour(bucket1, bucket2)
 		elif (i == 5):
 			executed = pour(bucket2, bucket1)
+
+		node = Node(bucket1, bucket2, initial)
+		initial.addChild(node)
+
 		if (checkState(bucket1, value)):
-			print("Done")
+			node.print()
 			return
-		print(bucket1, bucket2)
 		if (executed == True):
-			queue.append((bucket1, bucket2))
+			queue.append(node)
 		i += 1
 	breathFirstSearch()
 
-def depthFirstSearch(b1, b2, limit):
-	if (checkState(b1, value)):
-		print("Done")
+def depthFirstSearch(initial, limit):
+	if (checkState(initial.b1, value)):
+		initial.print()
 		return True
 	if (limit == 0):
 		return False
-	bucket1 = deepcopy(b1)
-	bucket2 = deepcopy(b2)
-
-	print(bucket1, bucket2)
 	i = 0
 	while(i < 6):
-		bucket1 = deepcopy(b1)
-		bucket2 = deepcopy(b2)
+		bucket1 = deepcopy(initial.b1)
+		bucket2 = deepcopy(initial.b2)
 		if (i == 0):
 			if not(fill(bucket1)):
 				i += 1
@@ -114,21 +130,23 @@ def depthFirstSearch(b1, b2, limit):
 			if not(pour(bucket2, bucket1)):
 				i += 1
 				continue
-		if (depthFirstSearch(bucket1, bucket2, limit - 1)):
+		node = Node(bucket1, bucket2, initial)
+		initial.addChild(node)
+		if (depthFirstSearch(node, limit - 1)):
 			return True
 		i += 1
 	return False
 
-def iterativeDeepeningSearch():
+def iterativeDeepeningSearch(initial):
 	limit = 0
-	while(depthFirstSearch(b1, b2, limit) == False):
+	while(depthFirstSearch(initial, limit) == False):
 		limit += 1
 
-'''
-queue.append((b1,b2))
-breathFirstSearch()
-'''
-'''
-depthFirstSearch(b1, b2, 5)
-'''
-iterativeDeepeningSearch()
+
+queue.append(initial)
+
+#breathFirstSearch()
+
+#depthFirstSearch(initial, 10)
+
+#iterativeDeepeningSearch(initial)
