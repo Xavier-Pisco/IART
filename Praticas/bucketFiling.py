@@ -25,14 +25,6 @@ class Node:
 			print(self.b1, self.b2)
 
 
-size1 = input("First container size: ")
-size2 = input("Second container size: ")
-
-b1 = Bucket(int(size1), 0)
-b2 = Bucket(int(size2), 0)
-
-initial = Node(b1, b2, None)
-
 def fill(bucket):
 	if (bucket.val < bucket.max):
 		bucket.val = bucket.max
@@ -143,6 +135,13 @@ def iterativeDeepeningSearch(initial):
 		limit += 1
 
 
+size1 = input("First container size: ")
+size2 = input("Second container size: ")
+
+b1 = Bucket(int(size1), 0)
+b2 = Bucket(int(size2), 0)
+
+initial = Node(b1, b2, None)
 queue.append(initial)
 
 #breathFirstSearch()
