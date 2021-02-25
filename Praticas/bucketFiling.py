@@ -54,8 +54,6 @@ def pour(bucket1, bucket2):
 def checkState(bucket1, value):
 	return (bucket1.val == value)
 
-queue = []
-value = 2
 
 def breathFirstSearch():
 	initial = queue.pop(0)
@@ -141,7 +139,9 @@ size2 = input("Second container size: ")
 b1 = Bucket(int(size1), 0)
 b2 = Bucket(int(size2), 0)
 
+value = 2
 initial = Node(b1, b2, None)
+queue = []
 queue.append(initial)
 
 #breathFirstSearch()
