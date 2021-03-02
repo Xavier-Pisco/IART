@@ -93,21 +93,6 @@ class Voyage:
 		return True
 
 
-
-class Node:
-	def __init__(self, voyage, parent):
-		self.voyage = voyage
-		self.parent = parent
-		self.children = []
-
-	def addChild(self, node):
-		self.children.append(node)
-
-	def print(self):
-		if (self.parent != None):
-			self.parent.print()
-			self.voyage.print()
-
 def move(boatSide, person1, person2=None):
 	if (person2 == None):
 		if (person1.side != boatSide):
