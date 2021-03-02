@@ -65,3 +65,22 @@ def iterativeDeepeningSearch(initial):
 		result = depthFirstSearch(initial, limit)
 		limit += 1
 	return result
+
+def aStarAlgorithm(list):
+	bestCost = float('inf')
+	bestNode = None
+	for i in range(len(list)):
+		if (list[i].getState().checkFinalState()):
+			return list[i]
+		cost = list[i].getCost() + list[i].getState().estimateCost()
+		if (cost < bestCost):
+			bestCost = cost
+			bestNode = list[i]
+	list.remove(bestNode)
+	children = bestNode.getState().getAllChildren()
+	for i in range(len(children)):
+		child = SearchNode(children[i], bestNode, 1)
+		if not(bestNode.compareAncient(child)):
+			list.append(child)
+	return aStarAlgorithm(list)
+
