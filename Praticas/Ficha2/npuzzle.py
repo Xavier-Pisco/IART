@@ -6,7 +6,7 @@ sys.setrecursionlimit(10000)
 
 from searchs import *
 
-class Board:
+class Board(StateWithCost):
 	def __init__(self, board, operator):
 		(matrix, x, y) = board
 		self.matrix = matrix
@@ -127,4 +127,5 @@ initial = SearchNode(Board(matrix4,None), None, 0)
 queue = [initial]
 
 #breathFirstSearch(queue).print()
+#greedySearch(queue).print()
 #aStarAlgorithm(queue).print()

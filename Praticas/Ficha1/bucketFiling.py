@@ -11,7 +11,7 @@ class Bucket:
 	max: int
 	val: int
 
-class BucketFill:
+class BucketFill(State):
 	def __init__(self, bucket1, bucket2, operator):
 		self.b1 = bucket1
 		self.b2 = bucket2
@@ -102,4 +102,4 @@ queue.append(initial)
 
 #depthFirstSearch(initial, 6).print()
 
-iterativeDeepeningSearch(initial).print()
+#iterativeDeepeningSearch(initial).print()

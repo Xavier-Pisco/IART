@@ -15,7 +15,7 @@ class Person:
 			return False
 		return (self.side == p.side and self.type == p.type)
 
-class Voyage:
+class Voyage(State):
 	def __init__(self, people, boatSide, operator):
 		self.people = people
 		self.boatSide = boatSide

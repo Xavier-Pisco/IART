@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 class SearchNode:
 	def __init__(self, state, parent, cost):
 		self.state = state
@@ -34,6 +36,29 @@ class SearchNode:
 			return False
 		return self.state == node.state
 
+class State(ABC):
+	@abstractmethod
+	def getAllChildren(self):
+		pass
+
+	@abstractmethod
+	def checkFinalState(self):
+		pass
+
+	@abstractmethod
+	def print(self):
+		pass
+
+	@abstractmethod
+	def __eq__(self, object):
+		pass
+
+class StateWithCost(State):
+	@abstractmethod
+	def estimateCost(self):
+		pass
+
+
 def breathFirstSearch(queue):
 	initial = queue.pop(0)
 	children = initial.getState().getAllChildren()
@@ -65,6 +90,24 @@ def iterativeDeepeningSearch(initial):
 		result = depthFirstSearch(initial, limit)
 		limit += 1
 	return result
+
+def greedySearch(list):
+	bestCost = float('inf')
+	bestNode = None
+	for i in range(len(list)):
+		if (list[i].getState().checkFinalState()):
+			return list[i]
+		cost = list[i].getState().estimateCost()
+		if (cost < bestCost):
+			bestCost = cost
+			bestNode = list[i]
+	list.remove(bestNode)
+	children = bestNode.getState().getAllChildren()
+	for i in range(len(children)):
+		child = SearchNode(children[i], bestNode, 1)
+		if not(bestNode.compareAncient(child)):
+			list.append(child)
+	return greedySearch(list)
 
 def aStarAlgorithm(list):
 	bestCost = float('inf')
