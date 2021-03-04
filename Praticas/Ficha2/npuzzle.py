@@ -10,7 +10,7 @@ class Board(StateWithCost):
 	def __init__(self, board, operator):
 		(matrix, x, y) = board
 		self.matrix = matrix
-		self.n = len(matrix) - 1
+		self.n = len(matrix)
 		self.x = x
 		self.y = y
 		self.operator = operator
@@ -57,11 +57,22 @@ class Board(StateWithCost):
 
 	def estimateCost(self):
 		estimate = 0
+		for i in range(self.n*self.n):
+			number = self.matrix[i//self.n][i%self.n]
+			if (number != 0):
+				number -= 1
+				estimate += abs(i // self.n - number // self.n) + abs(i % self.n - number % self.n)
+		return estimate
+
+	'''
+	def estimateCost(self):
+		estimate = 0
 		for i in range(len(self.matrix)*len(self.matrix)):
 			number = self.matrix[i//len(self.matrix)][i%len(self.matrix)]
 			if (number != i + 1 and number != 0):
 				estimate += 1
 		return estimate
+	'''
 
 	def print(self):
 		print(self.operator)
@@ -89,7 +100,7 @@ def up(board):
 def down(board):
 	x = board.x
 	y = board.y
-	if (y < board.n):
+	if (y < board.n - 1):
 		board.set(x, y, board.get(x, y+1))
 		board.set(x, y+1, 0)
 		board.x = x
@@ -111,7 +122,7 @@ def left(board):
 def right(board):
 	x = board.x
 	y = board.y
-	if (x < board.n):
+	if (x < board.n - 1):
 		board.set(x, y, board.get(x+1, y))
 		board.set(x+1, y, 0)
 		board.x = x+1
@@ -128,4 +139,4 @@ queue = [initial]
 
 #breathFirstSearch(queue).print()
 #greedySearch(queue).print()
-#aStarAlgorithm(queue).print()
+aStarAlgorithm(queue).print()
