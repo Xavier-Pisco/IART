@@ -1,4 +1,5 @@
 from copy import deepcopy
+from datetime import datetime
 
 import sys
 sys.path.append('../')
@@ -137,6 +138,9 @@ matrix4 = ([[5,1,3,4],[2,0,7,8],[10,6,11,12],[9,13,14,15]], 1, 1)
 initial = SearchNode(Board(matrix4,None), None, 0)
 queue = [initial]
 
+
+initialTime = datetime.now().microsecond
 #breathFirstSearch(queue).print()
 #greedySearch(queue).print()
 aStarAlgorithm(queue).print()
+print(datetime.now().microsecond - initialTime)
