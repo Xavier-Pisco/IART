@@ -1,5 +1,5 @@
 from copy import deepcopy
-from datetime import datetime
+import time
 
 import sys
 sys.path.append('../')
@@ -139,8 +139,8 @@ initial = SearchNode(Board(matrix4,None), None, 0)
 queue = [initial]
 
 
-initialTime = datetime.now().microsecond
+initialTime = time.time()
 #breathFirstSearch(queue).print()
 #greedySearch(queue).print()
 aStarAlgorithm(queue).print()
-print(datetime.now().microsecond - initialTime)
+print((time.time() - initialTime) * 1000)
