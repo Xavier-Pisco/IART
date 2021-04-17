@@ -22,7 +22,7 @@ Repositório da cadeira *Inteligência Artificial* no ano lectivo 2020/21
 
 Nota: Os kahoots são 6 em 10 (assumi que isto significa conta os 6 melhores)
 
-## Teoria
+# Mini-Testes
 
-
+## [Teste1](MT1)
 
