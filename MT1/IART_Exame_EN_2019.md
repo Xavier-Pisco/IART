@@ -97,7 +97,7 @@ Assumir custo m3 = 3
 
 [B B B x V V V]
 
-## 2
+## Exercício 2
 
 ### 2.1
 
@@ -195,7 +195,7 @@ Resultados:
   - Custo: 25.0
   - Solução: [4, 5, 2, 3, 0, 1]
 
-## 3
+## Exercício 3
 
 ### 3.1
 
