@@ -94,6 +94,8 @@ Para tornar este algoritmo num algoritmo de profundidade iterativa, o algoritmo 
 
 ### 1.5
 
+(Não está muito bem respondida, mas não sei bem o que era suposto dizer)
+
 O espaço de estados seria (N x M), onde N é o número de colunas e M o número de linhas da matriz.
 
 Um bom método para a resolução do problema seria usar o método de pesquisa A* e como heurística usar a "distância Manhattan" da posição atual à solução.
