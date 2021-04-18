@@ -22,3 +22,7 @@ Expandir d8[]10 para: b8[X]8 (custo 2), g4[Z]6 (custo 7), h6[]20 (custo 6)
 - h2: É admissível. Quer um objeto esteja na posição inicial ou esteja com o robô o custo de chegar à posição final é sempre >= 1.
 - h3: É falso pois o robô pode ter 2 objetos consigo e, por isso, ter menor custo do que a distância. e.g. a2[Z,X], com o objeto Y na posição final tem uma heurística de 1 + 8 = 9, mas com apenas 8 movimentos consegue descarregar os 2 objetos nas posições finais.
 - h4: É admissível pois, no mínimo, o robô tem de percorrer tantas casas como a maior distância ao destino de um objeto.
+
+### c
+
+A heurística h4 é a melhor pois é a que atribui valores mais altos e, consequentemente, valores mais próximos da realidade, sem ultrapassar os valores reais, ou seja, sem deixar de ser admissível.
