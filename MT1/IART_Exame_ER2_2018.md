@@ -34,3 +34,88 @@ O algoritmo de pesquisa gulosa está depentente apenas da heurística utilizada 
 
 O algoritmo A*, assumindo uma heurística admissível, vai sempre na direção do menor custo possível, uma vez que, expande sempre primeiro os nós com a soma do custo e heurística menor, pelo que, num só avalia um nó final quando o custo total deste nó for menor que a soma custo com heurística de todos os outros nós. É um algoritmo ótimo.
 
+## Exercício 2
+
+### a)
+
+Carvalho: 00 Pinheiro: 01 Eucalipto: 10
+
+i) 10 01 10 00 10
+
+### b)
+
+```
+Contexto:
+	Função de adaptação é uma função que transforma um problema de minimização num problema de maximização.
+	Em vez do objetivo ser ter o menor custo, o objetivo passa a ser estar o mais próximo do custo máximo
+```
+
+Custo máximo = 10 * (20+10+10+20+10) = 700
+
+Função de adaptação = 700 - custo da plantação
+
+### c)
+
+Função de adaptação:
+- i) 700 - 20 * 8 - 10 * 9 - 10 * 8 - 20 * 10 - 10 * 8 = 90
+- ii) 700 - 20 * 8 - 10 * 9 - 10 * 8 - 20 * 9 - 10 * 8 = 110
+- iii) 700 - 20 * 9 - 10 * 8 - 10 * 10 - 20 * 8 - 10 * 10 = 80
+- iv) 700 - 20 * 10 - 10 * 9 - 10 * 8 - 20 * 9 - 10 * 8 = 70
+
+Probabilidades de escolha:
+- i) 90/350 = 0.257
+- ii) 110/350 = 0.314
+- iii) 80/350 = 0.229
+- iv) 70/350 = 0.2
+
+Escolha:
+- i) 0.65 > 0.257, não é escolhido
+- ii) 0.8 > 0.314, não é escolhido
+- iii) 0.21 < 0.229, é escolhido
+
+### d)
+
+Fazer crossover pelas 2 útlimas zonas.
+
+- i) 0.55 < 0.75, logo é mutado
+- ii) 0.8 > 0.75, logo não é mutado
+- iii) mantém-se da política elitista
+- iv) 0.25 < 0.75, logo é mutado
+
+2ª geração:
+|Indivíduo|Inicial|Cruzamento|Mutação|
+|-|-|-|-|
+|i  |10 01 10 - 00 10|10 01 10 - **01 10**|10 01 10 - 01 10|
+|ii |10 01 10 - 01 10|10 01 10 - 01 10|10 01 10 - **1**1 10|
+|iii|01 10 00 - 10 00|01 10 00 - 10 00|10 01 00 - 10 00|
+|iv |00 01 10 - 01 10|00 01 10 - **00 10**|00 01 10 - 00 10|
+
+## Exercício 4
+
+### a)
+
+A afirmação é false, pois num caso em que exista uma solução na metade esquerda da árvore e esse solução esteja num nível mais profundo do que uma solução na árvore da direita a pesquisa *primeiro em largura* dá a solução do lado esquerdo da árvore e a pesquisa *aprofundamento progressivo* dá a solução do lado direito da árvore.
+
+### b)
+
+No algoritmo *arrefecimento simulado* existe sempre uma hipótese de escolher uma opção que está mais longe da solução. Esta hipótese é tão maior quanto maior for a temperatura utilizada e, a temperatura diminui constantemente com a pesquisa de novas soluções. Por isso, no ínicio da pesquisa é mais provavél considerar uma solução que está mais longe da solução.
+
+### c)
+
+E -> max(2,3) = 3
+F -> max(5,?)>= 5
+B -> min(3,>=5) = 3
+
+Houve um corte no nó F pois o 5 é maior que 3
+
+G -> max(0) = 0
+C -> min(0,?) <= 0
+
+Houve um corte no nó C pois o 0 é menor que o 3 do nó B
+
+I -> max(2,1) = 2
+D -> min(2,?) <= 2
+
+Houve um corte no nó D pois o 2 é menor que o 3 do nó B
+
+
