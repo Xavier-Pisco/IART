@@ -98,7 +98,3 @@ Uma heurística admissível pode não ser consistente.
 
 - Delta = 12-15 = -3
 - P = e^(-3/0.8) = 0.0235 = 2.35%
-
-### e)
-
-
