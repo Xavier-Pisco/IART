@@ -32,57 +32,51 @@ A heurística h4 é a melhor pois é a que atribui valores mais altos e, consequ
 
 ### a
 
-Uma possível representação seria uma lista com o número da máquina utilizada por cada um dos produtos, sendo que a cada posição correspondia a letra equivalente (e.g A = 1, B = 2...)
+Neste caso o número em binário equivale a número da máquina em binário
 
-ii) [1,3,2,3,3]
+M1 = 01, M2 = 10, M3 = 11
+
+ii) 01 11 10 11 11
 
 ### b
 
-(Provavelmente isto não está certo)
+A função de adaptação seria o custo máximo menos o custo real de modo a passar de um problema de minimização para um problema de maximização
 
-Uma possível função de adaptação seria fazer um crossover entre os dois primeiros indíviduos e outro crossover entre os indivídios iii) e iv). Esse crossover poderia ser executado trocando os as máquinas correspondentes aos últimos 2 produtos.
+Custo máximo = 10+7+11+12+8 = 48
 
-Neste caso esta função de adaptação originaria os indivíduos:
-- i) A-M1, B-M1, C-M2, D-M3, E-M3
-- ii) A-M1, B-M3, C-M2, D-M2, E-M1
-- iii) A-M1, B-M1, C-M2, D-M2, E-M2
-- iv) A-M2, B-M1, C-M2, D-M2, E-M2
+Função de adaptação = 48 - tempo total de produção
+
+- i) 48 - 25 = 23
+- ii) 48 - 27 = 21
+- iii) 48 - 31 = 17
+- iv) 48 - 41 = 7
 
 ### c)
 
-- i) custo = 25
-- ii) custo = 27
-- iii) custo = 31
-- iv) custo = 41
-
-(Isto está errado)
-
 Probabilidades:
-- i) P = 25/124 = 0.201
-- ii) P = 27/124 = 0.218
-- iii) P = 31/124 = 0.250
-- iv) P = 41/124 = 0.331
+- i) P = 23/68 = 0.338
+- ii) P = 21/68 = 0.309
+- iii) P = 17/68 = 0.25
+- iv) P = 7/68 = 0.103
 
-- i) Como 0.201 < 0.22, este indivíduo é rejeitado
-- ii) Como 0.218 < 0.4, este indivíduo é rejeitado
-- iii) Como 0.25 < 0.88, este indivíduo é rejeitado
-- iv) Este indivíduo é aceite por exclusão de partes
+- i) Como 0.338 < 0.22, este indivíduo é escolhido
+- ii) iii) e iv) não são escolhidos
 
 ### d)
 
-Fazer cruzamento entre o primeiro e o último produto pois é um conjunto que é diferente em todos os indivídos da população inicial.
+Fazer cruzamento em que se cruzam as últimas 2 máquinas
 
-Pai: A-M2, B-M1, C-M2, D-M2, E-M2
+- i) é o indivíduo escolhido
+- ii) 0.35 < 0.7, logo existe cruzamento
+- iii) 0.75 > 0.7, logo não existe cruzamento
+- iv) 0.5 < 0.7, logo existe cruzamento
 
-(O que está abaixo provavelmente está errado)
-
-Filhos:
-1. A-M2, B-M1, C-M2, D-M2, E-M2
-2. 0.35 < 0.7, logo houve cruzamento, A-M1, B-M1, C-M2, D-M2, E-M1
-3. 0.75 > 0.7, logo não houve cruzamento, A-M2, B-M1, C-M2, D-M2, E-M2
-4. 0.5 < 0.7, logo houve cruzamento, A-M1, B-M1, C-M2, D-M2, E-M2
-
-Como a probabilidade de mutação ocorreu no 22º número mas só existem 20 valore (5 por cada filho) não houve mutação.
+|Indivíduo|Inicial|Cruzamento|Mutação|
+|-|-|-|-|
+|i  |01 01 10 - 10 01|01 01 10 - 10 01|01 01 10 - 10 01|
+|ii |01 11 10 - 11 11|01 11 10 - **10 10**|01 11 10 - 10 10|
+|iii|01 01 10 - 10 10|01 01 10 - 10 10|0**0** 01 10 - 10 10|
+|iv |10 01 10 - 10 10|10 01 10 - **11 11**|10 01 10 - 11 11|
 
 ## Exercício 4
 
