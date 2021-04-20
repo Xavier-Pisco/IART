@@ -54,29 +54,32 @@ Função de adaptação = 48 - tempo total de produção
 ### c)
 
 Probabilidades:
-- i) P = 23/68 = 0.338
-- ii) P = 21/68 = 0.309
-- iii) P = 17/68 = 0.25
-- iv) P = 7/68 = 0.103
+- i) P = 23/68 = 0.338 - ]0, 0.338]
+- ii) P = 21/68 = 0.309 - ]0.338, 0.647]
+- iii) P = 17/68 = 0.25 - ]0.647, 0.897]
+- iv) P = 7/68 = 0.103 - ]0.897, 1]
 
-- i) Como 0.338 < 0.22, este indivíduo é escolhido
-- ii) iii) e iv) não são escolhidos
+- i) escolhido por elitismo
+- 0.22 in ]0, 0.338], i) é escolhido
+- 0.4 in ]0.338, 0.647], ii) é escolhido
+- 0.88 in ]0.647, 0.897], iii) é escolhido
+
 
 ### d)
 
 Fazer cruzamento em que se cruzam as últimas 2 máquinas
 
-- i) é o indivíduo escolhido
-- ii) 0.35 < 0.7, logo existe cruzamento
-- iii) 0.75 > 0.7, logo não existe cruzamento
-- iv) 0.5 < 0.7, logo existe cruzamento
+- i) mantém-se por elitismo
+- i) 0.35 < 0.7, logo cruza
+- ii) 0.75 > 0.7, logo mantém
+- iii) 0.5 < 0.7, logo cruza
 
 |Indivíduo|Inicial|Cruzamento|Mutação|
 |-|-|-|-|
 |i  |01 01 10 - 10 01|01 01 10 - 10 01|01 01 10 - 10 01|
-|ii |01 11 10 - 11 11|01 11 10 - **10 10**|01 11 10 - 10 10|
-|iii|01 01 10 - 10 10|01 01 10 - 10 10|0**0** 01 10 - 10 10|
-|iv |10 01 10 - 10 10|10 01 10 - **11 11**|10 01 10 - 11 11|
+|i  |01 01 10 - 10 01|01 01 10 - **10 10**|01 01 10 - 10 10|
+|ii |01 11 10 - 11 11|01 11 10 - 11 11|01 11 10 - 11 11|
+|iii|01 01 10 - 10 10|01 01 10 - **10 01**|0**0** 01 10 - 10 01|
 
 ## Exercício 4
 
