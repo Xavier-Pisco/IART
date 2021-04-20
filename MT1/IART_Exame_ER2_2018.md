@@ -86,9 +86,11 @@ Fazer crossover pelas 2 útlimas zonas.
 |Indivíduo|Inicial|Cruzamento|Mutação|
 |-|-|-|-|
 |i  |10 01 10 - 00 10|10 01 10 - **01 10**|10 01 10 - 01 10|
-|ii |10 01 10 - 01 10|10 01 10 - 01 10|10 01 10 - **1**1 10|
+|ii |10 01 10 - 01 10|10 01 10 - 01 10|10 01 10 - **0**1 10|
 |iii|01 10 00 - 10 00|01 10 00 - 10 00|10 01 00 - 10 00|
 |iv |00 01 10 - 01 10|00 01 10 - **00 10**|00 01 10 - 00 10|
+
+Não ocorre mutação porque o valor 11 não corresponde a nenhum tipo de árvore.
 
 ## Exercício 4
 
