@@ -53,34 +53,36 @@ Função de adaptação = 7 - número de fronteiras com cores iguais
 ### c)
 
 Probabilidade de escolha:
-- I1: 5/22 = 0.227
-- I2: 6/22 = 0.273
-- I3: 4/22 = 0.182
-- I4: 2/22 = 0.091
-- I5: 5/22 = 0.227
+- I1: 5/22 = 0.227 - ]0.273, 0.5]
+- I2: 6/22 = 0.273 - ]0, 0.273]
+- I3: 4/22 = 0.182 - ]0.727, 0.909]
+- I4: 2/22 = 0.091 - ]0.909, 1]
+- I5: 5/22 = 0.227 - ]0.5, 0.727]
 
 Escolha:
-- I1: 0.227 < 0.7, não é escolhido
-- I2: 0.273 < 0.35, não é escolhido
-- I3: 0.182 > 0.15, é escolhido
-- I4: não é escolhido
-- I5: não é escolhido
-
-O indivíduo selecionado foi o indíviduo I3
+- I2: Escolhido por elitismo
+- I5: 0.7 in ]0.5, 0.727]
+- I1: 0.35 in ]0.273, 0.5]
+- I2: 0.15 in ]0, 0.273]
+- I3: 0.81 in ]0.727, 0.909]
 
 ### d)
 
 Cruzamento em que se cruzam as cores dos últimos 2 países
 
-Pelas probabilidades existem cruzamentos na 2ª e 3ª possibilidades, ou seja, entre o 2º e o 4º indivíduo (o 3º é o escolhido por isso não pode ser mutado).
+- I2: mantém-se por elitismo
+- I5: 0.81 < 0.75, mantém
+- I1: 0.41 < 0.75, cruza
+- I2: 0.24 < 0.75, cruza
+- I3: 0.88 < 0.75, mantém
 
 |Indivíduo|Inicial|Cruzamento|Mutação|
 |-|-|-|-|
-|I1|10 01 10 - 00 01|10 01 10 - 00 01|10 01 10 - 0 01|
-|I2|00 01 01 - 00 10|00 01 01 - **10 01**|00 01 **0**1 - 10 01|
+|I2|00 01 01 - 00 10|00 01 01 - 00 10|00 01 01 - 00 10|
+|I5|10 10 01 - 10 01|10 10 01 - 10 01|10 10 01 - 10 01|
+|I1|10 01 10 - 00 01|10 01 10 - **00 10**|10 01 10 - 00 10|
+|I2|00 01 01 - 00 10|00 01 01 - **00 01**|00 01 01 - 00 01|
 |I3|10 01 00 - 01 01|10 01 00 - 01 01|10 01 00 - 01 01|
-|I4|10 10 10 - 10 01|10 10 10 - 10 01|10 10 10 - 10 01|
-|I5|10 10 01 - 10 01|10 10 01 - **00 10**|10 10 01 - 00 10|
 
 Como a mutação geraria uma cor inválida não ocorre mutação.
 
