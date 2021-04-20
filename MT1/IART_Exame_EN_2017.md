@@ -99,7 +99,3 @@ Esta redução do número de nós acontece quando o nó que vai ser escolhido é
 ### e)
 
 Para utilizar a fórmula "Naïve Bayes" é preciso que os estados do problema sejam independentes uns dos outros.
-
-###
-
-
