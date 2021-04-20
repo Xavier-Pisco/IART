@@ -77,10 +77,12 @@ Pelas probabilidades existem cruzamentos na 2ª e 3ª possibilidades, ou seja, e
 |Indivíduo|Inicial|Cruzamento|Mutação|
 |-|-|-|-|
 |I1|10 01 10 - 00 01|10 01 10 - 00 01|10 01 10 - 0 01|
-|I2|00 01 01 - 00 10|00 01 01 - **10 01**|00 01 **1**1 - 10 01|
+|I2|00 01 01 - 00 10|00 01 01 - **10 01**|00 01 **0**1 - 10 01|
 |I3|10 01 00 - 01 01|10 01 00 - 01 01|10 01 00 - 01 01|
 |I4|10 10 10 - 10 01|10 10 10 - 10 01|10 10 10 - 10 01|
 |I5|10 10 01 - 10 01|10 10 01 - **00 10**|10 10 01 - 00 10|
+
+Como a mutação geraria uma cor inválida não ocorre mutação.
 
 ## Exerício 4
 
