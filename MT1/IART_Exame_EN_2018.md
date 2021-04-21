@@ -8,11 +8,11 @@ A árvore é gigante para escrever em md.
 
 Expandir a1[]20 para: b8[X]12 (custo 8), d5[Y]13 (custo 7), g4[Z]11 (custo 9), h6[]20 (custo 12)
 
-Expandir d5[Y]13 para: b8[Y,X]7 (custo 5), d8[]10 (custo 3), g4[Y,Z]7 (custo 4), h6[Y]20 (custo 5)
+Expandir d5[Y]13 para: d8[]10 (custo 3), g4[Y,Z]7 (custo 4), h6[Y]20 (custo 5)
 
 Expandir b8[X]12 para: b2[]6 (custo 6), d5[X,Y]7 (custo 5), g4[X,Z]3 (custo 9), h6[X]20 (custo 8)
 
-Expandir g4[Z]11 para: b8[Z,X]2 (custo 9), d5[Z,Y]7 (custo 4), h1[]7 (custo 4), h6[Z]20 (custo 3)
+Expandir g4[Z]11 para: h1[]7 (custo 4), h6[Z]20 (custo 3)
 
 Expandir d8[]10 para: b8[X]8 (custo 2), g4[Z]6 (custo 7), h6[]20 (custo 6)
 
