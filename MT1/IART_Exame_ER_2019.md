@@ -142,11 +142,10 @@ No algoritmo "arrefecimento simulado", uma solução que seja pior do que a atua
 
 ### 3.6
 
-B = min(E,F,G) = min(6, 4, 1) = 1
-C = min(H,I,J) = min(13, 15, 20) = 13
-D = min(L,M,N) = min(8, ?, ?) <= 8
-
-A = max(B, C, D) = 13
+- B = min(E,F,G) = min(6, 4, 1) = 1
+- C = min(H,I,J) = min(13, 15, 20) = 13
+- D = min(L,M,N) = min(8, ?, ?) <= 8
+- A = max(B, C, D) = 13
 
 ### 3.7
 
