@@ -26,6 +26,7 @@ Nota: Os kahoots são 6 em 10 (assumi que isto significa conta os 6 melhores)
 
 ## [Teste1](MT1)
 
+-	**Exame 2020**: [Enunciado](MT1/IART_Exame_EN_2020.pdf) [Resolução](MT1/IART_Exame_EN_2020.md)
 -	**Exame 2019**: [Enunciado](MT1/IART_Exame_EN_2019.pdf) [Resolução](MT1/IART_Exame_EN_2019.md)
 -	**Recurso 2019**: [Enunciado](MT1/IART_Exame_ER_2019.pdf) [Resolução](MT1/IART_Exame_ER_2019.md)
 -	**Exame 2018**: [Enunciado](MT1/IART_Exame_EN_2018.pdf) [Resolução](MT1/IART_Exame_EN_2018.md)
