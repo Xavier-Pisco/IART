@@ -117,5 +117,3 @@ O algoritmo minimax pode retornar rapidamente soluções imperfeitas ao chegar a
 ### 13
 
 Sim, no Mundo de Wumpus o número de jogadas é limitado e é possível resolver o problema apenas com a perceção atual do mundo.
-
-### 1
